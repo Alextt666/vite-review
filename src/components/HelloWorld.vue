@@ -1,16 +1,24 @@
 <script setup>
-import { ref } from 'vue'
+// 1. 直接导入组件
+import Comp from '@/components/Comp.vue';
+import { ref, useContext } from 'vue'
 
+
+// 2. 属性定义
 defineProps({
   msg: String,
 })
+
+// 3. 获取上下文
+const ctx = useContext();
+console.log(ctx);
 
 const count = ref(0)
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
-
+  <Comp></Comp>
   <div class="card">
     <button type="button" @click="count++">count is {{ count }}</button>
     <p>
