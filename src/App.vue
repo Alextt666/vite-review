@@ -1,5 +1,13 @@
 <script setup>
 import HelloWorld from './components/HelloWorld.vue'
+import { ref } from 'vue';
+// 定义一个空的ref ， 当vue找到 同名的组件， 会自动填充
+// 记得value
+const hw = ref(null);
+const handleMyClick = ()=>{
+  console.log('myclick');
+  hw.value.someMethod()
+}
 </script>
 
 <template>
@@ -11,7 +19,7 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <HelloWorld msg="Vite + Vue" @myclick="handleMyClick" ref="hw"/>
 </template>
 
 <style scoped>

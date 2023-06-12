@@ -1,7 +1,7 @@
 <script setup>
 // 1. 直接导入组件
 import Comp from '@/components/Comp.vue';
-import { ref, useContext } from 'vue'
+import { ref } from 'vue'
 
 
 // 2. 属性定义
@@ -9,9 +9,18 @@ defineProps({
   msg: String,
 })
 
-// 3. 获取上下文
-const ctx = useContext();
-console.log(ctx);
+// 3. expose主动暴露属性
+defineExpose({
+  someMethod(){
+    console.log('some message from Helloworld');
+  }
+})
+
+// 定义事件
+const emits = defineEmits(['myclick']);
+const onclick = ()=>{
+  emits('myclick')
+}
 
 const count = ref(0)
 </script>
@@ -27,18 +36,7 @@ const count = ref(0)
     </p>
   </div>
 
-  <p>
-    Check out
-    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
-      >create-vue</a
-    >, the official Vue + Vite starter
-  </p>
-  <p>
-    Install
-    <a href="https://github.com/vuejs/language-tools" target="_blank">Volar</a>
-    in your IDE for a better DX
-  </p>
-  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+  <button @click="onclick">  </button>
 </template>
 
 <style scoped>
