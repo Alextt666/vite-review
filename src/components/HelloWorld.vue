@@ -23,6 +23,12 @@ const onclick = ()=>{
 }
 
 const count = ref(0)
+
+
+fetch('/api/getUser').then(res=>res.json()).then(res=>{
+  console.log(res);
+})
+
 </script>
 
 <template>
