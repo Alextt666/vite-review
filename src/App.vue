@@ -11,15 +11,11 @@ const handleMyClick = ()=>{
 </script>
 
 <template>
-  <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div @click="$store.commit('add')">
+    {{ $store.state.counter }}
   </div>
-  <HelloWorld msg="Vite + Vue" @myclick="handleMyClick" ref="hw"/>
+  <!-- <HelloWorld msg="Vite + Vue" @myclick="handleMyClick" ref="hw"/> -->
+  <router-view></router-view>
 </template>
 
 <style scoped>
