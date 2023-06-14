@@ -2,6 +2,7 @@
     <div>
         <HelloWorld></HelloWorld>
         <p>router</p>
+        <el-button>element</el-button>
     </div>
 </template>
 

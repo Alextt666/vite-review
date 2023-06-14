@@ -3,5 +3,10 @@ import './style.css'
 import App from './App.vue'
 import router from './router';
 import store from './store';
+import 'styles/index.scss';
 
-createApp(App).use(router).use(store).mount('#app')
+import element3 from './plugin/element3';
+
+
+
+createApp(App).use(router).use(store).use(element3).mount('#app')

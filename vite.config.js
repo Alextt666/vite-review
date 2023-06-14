@@ -10,7 +10,9 @@ export default defineConfig({
       '@':path.resolve(__dirname + '/src'),
       'comp':path.resolve(__dirname + '/src/components'),
       'images':path.resolve(__dirname + '/src/assets/images'),
-      'apis': path.resolve(__dirname + 'src/apis')
+      'apis': path.resolve(__dirname + '/src/apis'),
+      'styles': path.resolve(__dirname + '/src/styles'),
+      'plugin': path.resolve(__dirname + '/src/plugin'),
     }
   }
 })
